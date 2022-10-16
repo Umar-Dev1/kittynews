@@ -1,0 +1,51 @@
+require:
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rspec
+
+AllCops:
+  # Exclude auto-generated files by Rails
+  TargetRubyVersion: 2.7
+  TargetRailsVersion: 5.2
+  Exclude:
+    - 'db/schema.rb'
+    - 'node_modules/**/*'
+    - 'vendor/bundle/**/*'
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'lib/tasks/auto_annotate_models.rake'
+  NewCops: enable
+
+Rails/LexicallyScopedActionFilter:
+  Exclude:
+    - app/controllers/**/*.rb
+
+Metrics/LineLength:
+  Max: 120
+
+Metrics/MethodLength:
+  Max: 23
+
+Metrics/BlockLength:
+  Exclude:
+    - config/**/*
+    - spec/**/*
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - spec/**/*
+
+Style/Documentation:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+Style/OpenStructUse:
+  Enabled: false
+
+Naming/PredicateName:
+  Enabled: false

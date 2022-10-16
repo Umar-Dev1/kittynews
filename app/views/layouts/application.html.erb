@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+    <title>Kittynews</title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <body>
+    <header class="p-3 bg-dark text-white">
+      <div class="container">
+        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+          <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+          </a>
+
+          <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><%= link_to 'Home', root_path, class: "nav-link px-2 text-white" %></li>
+    
+          </ul>
+
+          <div class="text-end">
+            <div class="session">
+              <% if user_signed_in? %>
+                <span>Hi <%= current_user.name %>,</span>
+                <%= link_to 'Logout', destroy_user_session_path, data: { method: :delete }, class: 'btn btn-warning' %>
+              <% else %>
+                <%= link_to 'Login', new_user_session_path, class: 'btn btn-outline-light me-2' %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <% if alert.present? || notice.present? %>
+      <div class="alert alert-primary fixed-bottom w-25" role="alert">
+        <%= alert || notice %>
+      </div>
+    <% end %>
+    <section class="container mt-5">
+      <%= yield %>
+    </section>
+  </body>
+</html>
+
