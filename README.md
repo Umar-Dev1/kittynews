@@ -1,49 +1,5 @@
 # Kittynews 😼
 
-### Task 1
-
-Add Vote/Unvote button to posts.
-
-On the homepage, there is an inactive vote button.
-
-* Click by an unlogged user should redirect to the login page
-* Click by a logged in user should create a vote
-* Click on an already voted post should remove the vote
-* Visually mark which posts the user have voted on
-* Use GraphQL for fetching and updating the data
-
-### Task 2
-
-Show post information & comments on post page:
-
-http://localhost:3000/posts/1
-
-* Use GraphQL for fetching and updating the data
-
-### Task 3
-
-*Can't tell you yet* 😸 🙊
-* Logged In User can comment on Post.
-* Logged In User can reply to Comment.
-* Logged In User can vote/Un vote any comment.
-* One User can follow another User.
-
-This will be the task during the pair-programming session.
-
-## Criteria:
-
-**Getting to a working solution is most important**.
-
-After that we look for:
-
-- Database design
-- Performance
-- Dealing with GraphQL N+1
-- Tests
-- Best practices for Ruby, React, GraphQL
-
----
-
 ## Requirements
 
 - PostgreSQL 9.6
